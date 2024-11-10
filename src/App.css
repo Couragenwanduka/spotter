@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.date-picker {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.calendar {
+  position: absolute;
+  top: -300px;
+  left: -300px;
+  background-color: #36373a;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px;
+  height: 500px;
+  width: 800px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+}
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 40%;
+}
+
+.calendar-day {
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.calendar-day:hover {
+  background-color: #8ab4f8;
+}
+
+.calendar-day.selected {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 50%;
+}
+
+.calendar-day.today {
+  background-color: #ffeb3b;
+}
