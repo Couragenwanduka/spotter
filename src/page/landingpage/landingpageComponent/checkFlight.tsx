@@ -6,7 +6,6 @@ import DatePicker from './datePicker';
 import { useState, useEffect, useRef } from 'react';
 import { getIPLocation } from '../utils/location';
 import { fetchNearbyAirports } from '../utils/getNearbyAirport';
-import { MdArrowForwardIos } from 'react-icons/md';
 import { searchAirports } from '../utils/getNearbyAirport';
 import { MdSearch } from 'react-icons/md';
 
@@ -86,7 +85,7 @@ const CheckFlight = () => {
   };
 
   return (
-    <main className="relative flex flex-col w-full max-w-screen-xl mx-auto p-4 md:bg-[#36373a] shadow-xl shadow-black/30 rounded-lg">
+    <main className="relative flex flex-col w-full md:w-[85%] h-56  max-w-screen-xl mx-auto p-4 md:bg-[#36373a] shadow-xl shadow-black/30 rounded-lg">
       <div>
         <div className="mt-2 md:ml-5">
           <ExploreSection />
@@ -169,14 +168,6 @@ const CheckFlight = () => {
           )}
         </div>
       )}
-
-      <div className="flex mt-20  items-center font-roboto gap-3 text-sm sm:text-base">
-        <p className="text-[#8ab4f8]">Flights</p>
-        <MdArrowForwardIos />
-        <p className="flex items-center text-center">
-          From {location?.Location}
-        </p>
-      </div>
     </main>
   );
 };
