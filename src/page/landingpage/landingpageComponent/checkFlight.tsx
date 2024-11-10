@@ -21,8 +21,9 @@ const CheckFlight = () => {
   const [nearbyAirports, setNearbyAirports] = useState<Airport[]>([]);
   const [showDiv, setShowDiv] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
+  // const [searchTerm, setSearchTerm] = useState('');
   const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
+
 
   // Fetch the user's location when the component mounts
   useEffect(() => {
@@ -65,7 +66,7 @@ const CheckFlight = () => {
   // Handle input change for the search box with debounce
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setSearchTerm(value);
+    // setSearchTerm(value);
 
     if (debounceTimeout.current) {
       clearTimeout(debounceTimeout.current);
@@ -73,7 +74,7 @@ const CheckFlight = () => {
 
     debounceTimeout.current = setTimeout(async () => {
       if (value) {
-        const data = await searchAirports(value);
+        const data = await searchAirports();
         if (data) {
           setNearbyAirports(data);
         }

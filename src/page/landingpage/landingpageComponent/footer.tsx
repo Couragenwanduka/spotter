@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import { TbWorld } from 'react-icons/tb';
 import { IoLocationOutline } from 'react-icons/io5';
 import { GrCurrency } from 'react-icons/gr';

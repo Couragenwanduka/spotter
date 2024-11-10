@@ -35,7 +35,7 @@ export const fetchNearbyAirports = async () => {
   }
 };
 
-export const searchAirports = async (searchQuery: any) => {
+export const searchAirports = async () => {
   const options = {
     method: 'GET',
     url: 'https://sky-scrapper.p.rapidapi.com/api/v1/flights/searchAirport',
