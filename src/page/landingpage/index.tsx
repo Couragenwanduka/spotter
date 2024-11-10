@@ -10,6 +10,7 @@ import Tab from './landingpageComponent/tab';
 import Footer from './landingpageComponent/footer';
 import { IoCarOutline } from 'react-icons/io5';
 import { VscLocation } from 'react-icons/vsc';
+import { MdArrowForwardIos } from 'react-icons/md';
 
 interface Airport {
   name: string;
@@ -81,11 +82,19 @@ const LandingPage = () => {
           <CheckFlight />
         </div>
 
-        <div className="mt-20 md:ml-32 text-2xl font-productSans font-semibold">
+        <div className="flex mt-20  md:ml-24  items-center font-roboto gap-3 text-sm sm:text-base">
+        <p className="text-[#8ab4f8]">Flights</p>
+        <MdArrowForwardIos />
+        <p className="flex items-center text-center">
+          From {location?.Location}
+        </p>
+      </div>
+
+        <div className="mt-20 md:ml-24 text-2xl font-productSans font-semibold">
           Cheap flights from {location?.Location}
         </div>
 
-        <div className="flex md:ml-32 mt-8 text-xl font-productSans font-bold gap-4">
+        <div className="flex md:ml-24 mt-8 text-xl font-productSans font-bold gap-4">
           <div>Popular airports near {location?.Location}</div>
           <Tooltip text="Distance and driving time are relative to the city centre. Airports are listed based on distance from the centre of Asaba and popularity with travellers.">
             <button className="border-none focus:outline-none">
@@ -102,7 +111,7 @@ const LandingPage = () => {
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-2 gap-2 md:ml-32 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-2 gap-2 md:ml-24 mt-8">
               {nearbyAirports.map((airport: Airport) => (
                 <div
                   key={airport.code}
@@ -143,7 +152,7 @@ const LandingPage = () => {
           )}
         </div>
 
-        <div className="md:ml-[7.5rem] focus:outline-none mt-10">
+        <div className="md:ml-[6.5rem] focus:outline-none mt-10">
           <p className="text-xl font-productSans">
             Frequently asked questions about flying from {location?.Location}
           </p>
@@ -153,7 +162,7 @@ const LandingPage = () => {
           <FAQ />
         </div>
 
-        <div className="md:ml-[7.5rem]">
+        <div className="md:ml-[6.5rem]">
           <p className="mt-10 font-roboto text-2xl">Search more flights</p>
           <p className="font-roboto text-2xl mt-10">More places to fly</p>
           <Tab location={location?.Location} />

@@ -6,7 +6,7 @@ import { FaRegCalendarAlt } from 'react-icons/fa'; // Calendar icon
 
 // Helper function to generate an array of days for a given month and year
 function generateDaysInMonth(year: number, month: number) {
-  const date = new Date(year, month, 1);
+   new Date(year, month, 1);
   const daysInMonth = [];
   const lastDay = new Date(year, month + 1, 0).getDate();
 
@@ -25,7 +25,7 @@ const DatePicker = () => {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [selectedReturn, setSelectedReturn] = useState<any>(null); // Return date state
   const [departure, setDeparture] = useState<any>(null);
-  const [selectedTripOption, setSelectedTripOption] = useState('Round Trip'); // Default trip option
+  // const [selectedTripOption, setSelectedTripOption] = useState('Round Trip'); /
 
   // Trip options for dropdown
   const tripOptions = ['Round Trip', 'One-way', 'Multi-city'];
@@ -140,7 +140,7 @@ const DatePicker = () => {
                   <span className="text-xl font-semibold">
                     <GoArrowSwitch />
                   </span>
-                  <p>{selectedTripOption}</p>
+                  {/* <p>{selectedTripOption}</p> */}
                   <button className="text-white border-none focus:outline-none">
                     {isDropdownOpen ? <MdArrowDropUp /> : <MdArrowDropDown />}
                   </button>
